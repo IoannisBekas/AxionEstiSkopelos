@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="el">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Axion Esti | Skopelos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body data-page="home">
+    <div class="site-bg"></div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">AE</span>
+          <span class="brand-text">
+            <strong>Axion Esti</strong>
+            <small data-i18n="common.brandTag">Glossa, Skopelos</small>
+          </span>
+        </a>
+        <div class="header-controls">
+          <nav class="main-nav" aria-label="Primary">
+            <a class="nav-link active" href="index.html" data-i18n="common.navHome">Αρχική</a>
+            <a class="nav-link" href="studios.html" data-i18n="common.navStudios">Studios</a>
+            <a class="nav-link" href="skopelos.html" data-i18n="common.navIsland">Σκόπελος</a>
+            <a class="nav-link" href="contact.html" data-i18n="common.navContact">Επικοινωνία</a>
+          </nav>
+          <div class="lang-switcher" aria-label="Language switcher">
+            <button type="button" class="lang-btn active" data-lang="el">EL</button>
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+            <button type="button" class="lang-btn" data-lang="de">DE</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <div class="hero-copy card">
+          <p class="eyebrow" data-i18n="home.eyebrow">Οικογενειακή φιλοξενία πάνω από το Αιγαίο</p>
+          <h1 data-i18n="home.title">Μια ήρεμη καλοκαιρινή βάση ανάμεσα στη Γλώσσα και το Παλαιό Κλήμα.</h1>
+          <p class="lead" data-i18n="home.lead">
+            Το Axion Esti είναι ένα ζεστό, φωτεινό κατάλυμα στη Σκόπελο, με θέα στη θάλασσα, πισίνα και τον χαλαρό ρυθμό
+            που κάνει τις διακοπές να μοιάζουν απλές.
+          </p>
+          <div class="button-row">
+            <a class="button primary" href="studios.html" data-i18n="home.primaryCta">Δείτε τα studios</a>
+            <a class="button secondary" href="contact.html" data-i18n="home.secondaryCta">Επικοινωνήστε μαζί μας</a>
+          </div>
+          <ul class="feature-strip">
+            <li data-i18n="home.featureOne">Θέα στη θάλασσα</li>
+            <li data-i18n="home.featureTwo">Πισίνα & ηλιόλουστη βεράντα</li>
+            <li data-i18n="home.featureThree">Κοντά στη Γλώσσα και το Λουτράκι</li>
+          </ul>
+        </div>
+
+        <aside class="hero-visual card">
+          <div class="photo-composition">
+            <figure class="visual-card photo-card sea photo-primary" data-media>
+              <img
+                src="images/pool-main.png"
+                alt="Pool at Axion Esti"
+                data-i18n-alt="common.altPoolMain"
+                loading="eager"
+              />
+              <span class="visual-label" data-i18n="home.photoMain">Πρωινά δίπλα στην πισίνα</span>
+            </figure>
+            <figure class="visual-card photo-card breeze photo-secondary" data-media>
+              <img
+                src="images/balcony-view.png"
+                alt="Balcony with sea view at Axion Esti"
+                data-i18n-alt="common.altBalconyView"
+                loading="lazy"
+              />
+              <span class="visual-label" data-i18n="home.photoSecondary">Ιδιωτικά μπαλκόνια πάνω από το Αιγαίο</span>
+            </figure>
+            <div class="hero-note">
+              <p class="note-title" data-i18n="home.noteTitle">Ήρεμο, φωτεινό, φιλόξενο</p>
+              <p data-i18n="home.noteBody">
+                Ιδανικό για ζευγάρια, φίλους και οικογένειες που θέλουν διακριτική φιλοξενία και εύκολη πρόσβαση στις
+                βόρειες παραλίες της Σκοπέλου.
+              </p>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="container section-grid">
+        <article class="section-intro">
+          <p class="section-kicker" data-i18n="home.welcomeKicker">Καλώς ήρθατε</p>
+          <h2 data-i18n="home.welcomeTitle">Ένας χώρος φτιαγμένος για αργά πρωινά και ανοιχτούς ορίζοντες.</h2>
+          <p data-i18n="home.welcomeBody">
+            Εδώ η μέρα ξεκινά με αλμυρό αέρα, καφέ στο μπαλκόνι και εκείνη τη γαλήνια αίσθηση ότι δεν χρειάζεται να
+            βιαστείτε πουθενά.
+          </p>
+        </article>
+        <div class="info-cards">
+          <article class="info-card card">
+            <p class="card-kicker" data-i18n="home.cardOneKicker">Η διαμονή</p>
+            <h3 data-i18n="home.cardOneTitle">Άνετα studios με ανεπιτήδευτη καλοκαιρινή αίσθηση</h3>
+            <p data-i18n="home.cardOneBody">
+              Φωτεινοί εσωτερικοί χώροι, καθημερινή πρακτικότητα και ησυχία που ταιριάζει σε διακοπές χωρίς ένταση.
+            </p>
+          </article>
+          <article class="info-card card">
+            <p class="card-kicker" data-i18n="home.cardTwoKicker">Ο εξωτερικός χώρος</p>
+            <h3 data-i18n="home.cardTwoTitle">Πισίνα, καθιστικά και θέα που μένει μαζί σας</h3>
+            <p data-i18n="home.cardTwoBody">
+              Η αυλή λειτουργεί σαν φυσική προέκταση του σπιτιού, με χώρο για ξεκούραση μετά τη θάλασσα ή πριν το
+              δείπνο στη Γλώσσα.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="container amenities-block card">
+        <div class="amenities-copy">
+          <p class="section-kicker" data-i18n="home.amenitiesKicker">Τι θα βρείτε</p>
+          <h2 data-i18n="home.amenitiesTitle">Μικρές λεπτομέρειες που κάνουν τη διαμονή πιο εύκολη.</h2>
+        </div>
+        <div class="amenity-list">
+          <span data-i18n="common.amenityPool">Εξωτερική πισίνα</span>
+          <span data-i18n="common.amenitySeaView">Μπαλκόνια με θέα</span>
+          <span data-i18n="common.amenityKitchen">Μικρή κουζίνα</span>
+          <span data-i18n="common.amenityWifi">Δωρεάν Wi-Fi</span>
+          <span data-i18n="common.amenityParking">Ιδιωτικό parking</span>
+          <span data-i18n="common.amenityAircon">Κλιματισμός</span>
+          <span data-i18n="common.amenityTerrace">Ηλιόλουστη βεράντα</span>
+          <span data-i18n="common.amenityQuiet">Ήσυχη τοποθεσία</span>
+        </div>
+      </section>
+
+      <section class="container panorama-feature card">
+        <div class="panorama-copy">
+          <p class="section-kicker" data-i18n="home.escapeKicker">Τοπίο & ατμόσφαιρα</p>
+          <h2 data-i18n="home.escapeTitle">Η διαμονή αγκαλιάζει το νερό, το φως και τον ορίζοντα.</h2>
+          <p data-i18n="home.escapeBody">
+            Με την πέτρινη αρχιτεκτονική, την πισίνα και τη θέα προς το Αιγαίο, το Axion Esti αποκτά πιο έντονη
+            ταυτότητα όταν το βλέπετε μέσα από τις πραγματικές εικόνες του.
+          </p>
+        </div>
+        <div class="panorama-media">
+          <figure class="visual-card photo-card sunrise panorama-main" data-media>
+            <img
+              src="images/sunset-view.png"
+              alt="Sunset view over the sea from Skopelos"
+              data-i18n-alt="common.altSunsetView"
+              loading="lazy"
+            />
+            <span class="visual-label" data-i18n="home.escapeOne">Απογευματινό φως πάνω από το πέλαγος</span>
+          </figure>
+          <figure class="visual-card photo-card sea panorama-side" data-media>
+            <img
+              src="images/pool-aerial.png"
+              alt="Aerial view of Axion Esti and the pool"
+              data-i18n-alt="common.altPoolAerial"
+              loading="lazy"
+            />
+            <span class="visual-label" data-i18n="home.escapeTwo">Ψηλά πάνω από τη θάλασσα, ανάμεσα σε ελιές και πέτρα</span>
+          </figure>
+        </div>
+      </section>
+
+      <section class="container page-links">
+        <article class="page-link card">
+          <p class="section-kicker" data-i18n="home.linkStudiosKicker">Studios</p>
+          <h3 data-i18n="home.linkStudiosTitle">Δείτε τον χαρακτήρα της διαμονής</h3>
+          <p data-i18n="home.linkStudiosBody">
+            Περιηγηθείτε στους χώρους, τις παροχές και στις πρακτικές πληροφορίες για μια άνετη επίσκεψη.
+          </p>
+          <a href="studios.html" class="text-link" data-i18n="home.linkStudiosCta">Μετάβαση στα studios</a>
+        </article>
+        <article class="page-link card">
+          <p class="section-kicker" data-i18n="home.linkIslandKicker">Σκόπελος</p>
+          <h3 data-i18n="home.linkIslandTitle">Γνωρίστε τη βόρεια πλευρά του νησιού</h3>
+          <p data-i18n="home.linkIslandBody">
+            Παραλίες, χωριά και μικρές καθημερινές διαδρομές που κάνουν τη Σκόπελο ξεχωριστή.
+          </p>
+          <a href="skopelos.html" class="text-link" data-i18n="home.linkIslandCta">Ανακαλύψτε τη Σκόπελο</a>
+        </article>
+        <article class="page-link card">
+          <p class="section-kicker" data-i18n="home.linkContactKicker">Επικοινωνία</p>
+          <h3 data-i18n="home.linkContactTitle">Ρωτήστε για διαθεσιμότητα ή λεπτομέρειες</h3>
+          <p data-i18n="home.linkContactBody">
+            Όταν είστε έτοιμοι, στείλτε ένα μήνυμα ή καλέστε για μια ήρεμη και ξεκάθαρη συνεννόηση.
+          </p>
+          <a href="contact.html" class="text-link" data-i18n="home.linkContactCta">Πηγαίνετε στην επικοινωνία</a>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>Axion Esti</strong>
+          <p data-i18n="common.footerLine">Θέση Βλαχάκι, Γλώσσα, Σκόπελος</p>
+        </div>
+        <div class="footer-links">
+          <a href="tel:+302424033144">+30 24240 33144</a>
+          <a href="mailto:axionestiholiday@gmail.com">axionestiholiday@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
