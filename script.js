@@ -1,4 +1,4 @@
-const SITE_URL = "https://ioannisbekas.github.io/AxionEstiSkopelos/";
+const SITE_URL = "https://ioannisbekas.github.io/Kalokairi-Boutique-Residence/";
 const BOOKING_URLS = {
   el: "https://www.booking.com/hotel/gr/axion-esti.el.html",
   en: "https://www.booking.com/hotel/gr/axion-esti.en-gb.html",
