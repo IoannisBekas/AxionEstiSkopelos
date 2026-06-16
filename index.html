@@ -3,7 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Axion Esti | Skopelos</title>
+    <title>Kalokairi Boutique Residence | Skopelos</title>
+    <meta
+      name="description"
+      content="Kalokairi Boutique Residence στη Γλώσσα Σκοπέλου, με θέα στο Αιγαίο, εποχική πισίνα, ιδιωτικό parking και ήρεμη πρόσβαση στις βόρειες παραλίες."
+    />
+    <meta name="theme-color" content="#2f6f84" />
+    <link rel="canonical" href="https://ioannisbekas.github.io/AxionEstiSkopelos/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kalokairi Boutique Residence | Skopelos" />
+    <meta
+      property="og:description"
+      content="Residence στη Γλώσσα Σκοπέλου με θέα στο Αιγαίο, πισίνα, ιδιωτικό parking και ήρεμη καλοκαιρινή ατμόσφαιρα."
+    />
+    <meta property="og:url" content="https://ioannisbekas.github.io/AxionEstiSkopelos/" />
+    <meta property="og:image" content="https://ioannisbekas.github.io/AxionEstiSkopelos/images/pool-main.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,23 +34,32 @@
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="index.html">
-          <span class="brand-mark">AE</span>
+          <span class="brand-mark">KB</span>
           <span class="brand-text">
-            <strong>Axion Esti</strong>
+            <strong data-i18n="common.brandName">Kalokairi Boutique Residence</strong>
             <small data-i18n="common.brandTag">Glossa, Skopelos</small>
           </span>
         </a>
         <div class="header-controls">
           <nav class="main-nav" aria-label="Primary">
-            <a class="nav-link active" href="index.html" data-i18n="common.navHome">Αρχική</a>
-            <a class="nav-link" href="studios.html" data-i18n="common.navStudios">Studios</a>
+            <a class="nav-link active" href="index.html" aria-current="page" data-i18n="common.navHome">Αρχική</a>
+            <a class="nav-link" href="studios.html" data-i18n="common.navStudios">Δωμάτια</a>
             <a class="nav-link" href="skopelos.html" data-i18n="common.navIsland">Σκόπελος</a>
             <a class="nav-link" href="contact.html" data-i18n="common.navContact">Επικοινωνία</a>
           </nav>
+          <a
+            class="booking-link"
+            href="https://www.booking.com/hotel/gr/axion-esti.el.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-booking-link
+            data-i18n="common.bookingCta"
+            >Διαθεσιμότητα</a
+          >
           <div class="lang-switcher" aria-label="Language switcher">
-            <button type="button" class="lang-btn active" data-lang="el">EL</button>
-            <button type="button" class="lang-btn" data-lang="en">EN</button>
-            <button type="button" class="lang-btn" data-lang="de">DE</button>
+            <button type="button" class="lang-btn active" data-lang="el" aria-label="Greek" aria-pressed="true">EL</button>
+            <button type="button" class="lang-btn" data-lang="en" aria-label="English" aria-pressed="false">EN</button>
+            <button type="button" class="lang-btn" data-lang="de" aria-label="German" aria-pressed="false">DE</button>
           </div>
         </div>
       </div>
@@ -46,11 +71,20 @@
           <p class="eyebrow" data-i18n="home.eyebrow">Οικογενειακή φιλοξενία πάνω από το Αιγαίο</p>
           <h1 data-i18n="home.title">Μια ήρεμη καλοκαιρινή βάση ανάμεσα στη Γλώσσα και το Παλαιό Κλήμα.</h1>
           <p class="lead" data-i18n="home.lead">
-            Το Axion Esti είναι ένα ζεστό, φωτεινό κατάλυμα στη Σκόπελο, με θέα στη θάλασσα, πισίνα και τον χαλαρό ρυθμό
+            Το Kalokairi Boutique Residence είναι ένα ζεστό, φωτεινό κατάλυμα στη Σκόπελο, με θέα στη θάλασσα, πισίνα και τον χαλαρό ρυθμό
             που κάνει τις διακοπές να μοιάζουν απλές.
           </p>
           <div class="button-row">
-            <a class="button primary" href="studios.html" data-i18n="home.primaryCta">Δείτε τα studios</a>
+            <a
+              class="button primary"
+              href="https://www.booking.com/hotel/gr/axion-esti.el.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-booking-link
+              data-i18n="common.bookingCta"
+              >Δείτε διαθεσιμότητα</a
+            >
+            <a class="button secondary" href="studios.html" data-i18n="home.primaryCta">Δείτε τα δωμάτια</a>
             <a class="button secondary" href="contact.html" data-i18n="home.secondaryCta">Επικοινωνήστε μαζί μας</a>
           </div>
           <ul class="feature-strip">
@@ -63,12 +97,19 @@
         <aside class="hero-visual card">
           <div class="hero-stage">
             <figure class="visual-card photo-card sea hero-main-photo" data-media>
-              <img
-                src="images/pool-main.png"
-                alt="Pool at Axion Esti"
-                data-i18n-alt="common.altPoolMain"
-                loading="eager"
-              />
+              <picture>
+                <source srcset="images/pool-main.webp" type="image/webp" />
+                <img
+                  src="images/pool-main.png"
+                  alt="Pool at Kalokairi Boutique Residence"
+                  data-i18n-alt="common.altPoolMain"
+                  width="669"
+                  height="433"
+                  decoding="async"
+                  fetchpriority="high"
+                  loading="eager"
+                />
+              </picture>
               <span class="visual-label" data-i18n="home.photoMain">Πρωινά δίπλα στην πισίνα</span>
             </figure>
             <div class="hero-note">
@@ -132,27 +173,39 @@
           <p class="section-kicker" data-i18n="home.escapeKicker">Τοπίο & ατμόσφαιρα</p>
           <h2 data-i18n="home.escapeTitle">Η διαμονή αγκαλιάζει το νερό, το φως και τον ορίζοντα.</h2>
           <p data-i18n="home.escapeBody">
-            Με την πέτρινη αρχιτεκτονική, την πισίνα και τη θέα προς το Αιγαίο, το Axion Esti αποκτά πιο έντονη
+            Με την πέτρινη αρχιτεκτονική, την πισίνα και τη θέα προς το Αιγαίο, το Kalokairi Boutique Residence αποκτά πιο έντονη
             ταυτότητα όταν το βλέπετε μέσα από τις πραγματικές εικόνες του.
           </p>
         </div>
         <div class="panorama-media">
           <figure class="visual-card photo-card sunrise panorama-main" data-media>
-            <img
-              src="images/sunset-view.png"
-              alt="Sunset view over the sea from Skopelos"
-              data-i18n-alt="common.altSunsetView"
-              loading="lazy"
-            />
+            <picture>
+              <source srcset="images/sunset-view.webp" type="image/webp" />
+              <img
+                src="images/sunset-view.png"
+                alt="Sunset view over the sea from Skopelos"
+                data-i18n-alt="common.altSunsetView"
+                width="667"
+                height="383"
+                decoding="async"
+                loading="lazy"
+              />
+            </picture>
             <span class="visual-label" data-i18n="home.escapeOne">Απογευματινό φως πάνω από το πέλαγος</span>
           </figure>
           <figure class="visual-card photo-card sea panorama-side" data-media>
-            <img
-              src="images/pool-aerial.png"
-              alt="Aerial view of Axion Esti and the pool"
-              data-i18n-alt="common.altPoolAerial"
-              loading="lazy"
-            />
+            <picture>
+              <source srcset="images/pool-aerial.webp" type="image/webp" />
+              <img
+                src="images/pool-aerial.png"
+                alt="Aerial view of Kalokairi Boutique Residence and the pool"
+                data-i18n-alt="common.altPoolAerial"
+                width="666"
+                height="367"
+                decoding="async"
+                loading="lazy"
+              />
+            </picture>
             <span class="visual-label" data-i18n="home.escapeTwo">Ψηλά πάνω από τη θάλασσα, ανάμεσα σε ελιές και πέτρα</span>
           </figure>
         </div>
@@ -160,12 +213,12 @@
 
       <section class="container page-links">
         <article class="page-link card">
-          <p class="section-kicker" data-i18n="home.linkStudiosKicker">Studios</p>
+          <p class="section-kicker" data-i18n="home.linkStudiosKicker">Δωμάτια</p>
           <h3 data-i18n="home.linkStudiosTitle">Δείτε τον χαρακτήρα της διαμονής</h3>
           <p data-i18n="home.linkStudiosBody">
             Περιηγηθείτε στους χώρους, τις παροχές και στις πρακτικές πληροφορίες για μια άνετη επίσκεψη.
           </p>
-          <a href="studios.html" class="text-link" data-i18n="home.linkStudiosCta">Μετάβαση στα studios</a>
+          <a href="studios.html" class="text-link" data-i18n="home.linkStudiosCta">Μετάβαση στα δωμάτια</a>
         </article>
         <article class="page-link card">
           <p class="section-kicker" data-i18n="home.linkIslandKicker">Σκόπελος</p>
@@ -189,10 +242,19 @@
     <footer class="site-footer">
       <div class="container footer-inner">
         <div>
-          <strong>Axion Esti</strong>
+          <strong data-i18n="common.brandName">Kalokairi Boutique Residence</strong>
+          <p class="former-name" data-i18n="common.formerName">Πρώην Axion Esti Apartments</p>
           <p data-i18n="common.footerLine">Θέση Βλαχάκι, Γλώσσα, Σκόπελος</p>
         </div>
         <div class="footer-links">
+          <a
+            href="https://www.booking.com/hotel/gr/axion-esti.el.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-booking-link
+            data-i18n="common.bookingCta"
+            >Διαθεσιμότητα</a
+          >
           <a href="tel:+302424033144">+30 24240 33144</a>
           <a href="mailto:axionestiholiday@gmail.com">axionestiholiday@gmail.com</a>
         </div>

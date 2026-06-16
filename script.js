@@ -1,26 +1,58 @@
+const SITE_URL = "https://ioannisbekas.github.io/AxionEstiSkopelos/";
+const BOOKING_URLS = {
+  el: "https://www.booking.com/hotel/gr/axion-esti.el.html",
+  en: "https://www.booking.com/hotel/gr/axion-esti.en-gb.html",
+  de: "https://www.booking.com/hotel/gr/axion-esti.de.html"
+};
+const PAGE_PATHS = {
+  home: "",
+  studios: "studios.html",
+  skopelos: "skopelos.html",
+  contact: "contact.html"
+};
+const PAGE_IMAGES = {
+  home: "images/pool-main.png",
+  studios: "images/studio-view.png",
+  skopelos: "images/sunset-view.png",
+  contact: "images/pool-terrace.png"
+};
+
 const translations = {
   el: {
     meta: {
-      home: "Axion Esti | Σκόπελος",
-      studios: "Axion Esti | Studios",
-      skopelos: "Axion Esti | Σκόπελος",
-      contact: "Axion Esti | Επικοινωνία"
+      home: "Kalokairi Boutique Residence | Σκόπελος",
+      studios: "Kalokairi Boutique Residence | Studios",
+      skopelos: "Kalokairi Boutique Residence | Σκόπελος",
+      contact: "Kalokairi Boutique Residence | Επικοινωνία"
+    },
+    descriptions: {
+      home:
+        "Kalokairi Boutique Residence στη Γλώσσα Σκοπέλου, με θέα στο Αιγαίο, εποχική πισίνα, ιδιωτικό parking και ήρεμη πρόσβαση στις βόρειες παραλίες.",
+      studios:
+        "Δωμάτια και studios στο Kalokairi Boutique Residence με κλιματισμό, μικρή κουζίνα, Wi-Fi, μπαλκόνια, πισίνα και ιδιωτικό parking.",
+      skopelos:
+        "Γνωρίστε τη Γλώσσα, το Λουτράκι και τις βόρειες παραλίες της Σκοπέλου από το Kalokairi Boutique Residence.",
+      contact:
+        "Επικοινωνήστε με το Kalokairi Boutique Residence στη Γλώσσα Σκοπέλου ή ελέγξτε διαθεσιμότητα στο Booking.com."
     },
     common: {
+      brandName: "Kalokairi Boutique Residence",
       brandTag: "Γλώσσα, Σκόπελος",
       navHome: "Αρχική",
-      navStudios: "Studios",
+      navStudios: "Δωμάτια",
       navIsland: "Σκόπελος",
       navContact: "Επικοινωνία",
+      bookingCta: "Δείτε διαθεσιμότητα",
+      formerName: "Πρώην Axion Esti Apartments",
       photoPlaceholder: "Θέση για μελλοντική φωτογραφία",
       footerLine: "Θέση Βλαχάκι, Γλώσσα, Σκόπελος",
-      altPoolMain: "Η κύρια πισίνα και η πρόσοψη του Axion Esti",
+      altPoolMain: "Η κύρια πισίνα και η πρόσοψη του Kalokairi Boutique Residence",
       altPoolAerial: "Εναέρια θέα του καταλύματος και της πισίνας",
       altStudioInterior: "Εσωτερικό studio με μικρή κουζίνα και μπαλκόνι με θέα",
       altBalconyView: "Ιδιωτικό μπαλκόνι με θέα στο Αιγαίο",
       altPoolTop: "Θέα από ψηλά στην πισίνα και το deck",
       altSunsetView: "Ηλιοβασίλεμα πάνω από το πέλαγος από τη βόρεια Σκόπελο",
-      altPoolTerrace: "Η πισίνα και η πέτρινη αυλή του Axion Esti",
+      altPoolTerrace: "Η πισίνα και η πέτρινη αυλή του Kalokairi Boutique Residence",
       amenityPool: "Εξωτερική πισίνα",
       amenitySeaView: "Μπαλκόνια με θέα",
       amenityKitchen: "Μικρή κουζίνα",
@@ -34,8 +66,8 @@ const translations = {
       eyebrow: "Οικογενειακή φιλοξενία πάνω από το Αιγαίο",
       title: "Μια ήρεμη καλοκαιρινή βάση ανάμεσα στη Γλώσσα και το Παλαιό Κλήμα.",
       lead:
-        "Το Axion Esti είναι ένα ζεστό, φωτεινό κατάλυμα στη Σκόπελο, με θέα στη θάλασσα, πισίνα και τον χαλαρό ρυθμό που κάνει τις διακοπές να μοιάζουν απλές.",
-      primaryCta: "Δείτε τα studios",
+        "Το Kalokairi Boutique Residence είναι ένα ζεστό, φωτεινό κατάλυμα στη Σκόπελο, με θέα στη θάλασσα, πισίνα και τον χαλαρό ρυθμό που κάνει τις διακοπές να μοιάζουν απλές.",
+      primaryCta: "Δείτε τα δωμάτια",
       secondaryCta: "Επικοινωνήστε μαζί μας",
       featureOne: "Θέα στη θάλασσα",
       featureTwo: "Πισίνα & ηλιόλουστη βεράντα",
@@ -62,14 +94,14 @@ const translations = {
       escapeKicker: "Τοπίο & ατμόσφαιρα",
       escapeTitle: "Η διαμονή αγκαλιάζει το νερό, το φως και τον ορίζοντα.",
       escapeBody:
-        "Με την πέτρινη αρχιτεκτονική, την πισίνα και τη θέα προς το Αιγαίο, το Axion Esti αποκτά πιο έντονη ταυτότητα όταν το βλέπετε μέσα από τις πραγματικές εικόνες του.",
+        "Με την πέτρινη αρχιτεκτονική, την πισίνα και τη θέα προς το Αιγαίο, το Kalokairi Boutique Residence αποκτά πιο έντονη ταυτότητα όταν το βλέπετε μέσα από τις πραγματικές εικόνες του.",
       escapeOne: "Απογευματινό φως πάνω από το πέλαγος",
       escapeTwo: "Ψηλά πάνω από τη θάλασσα, ανάμεσα σε ελιές και πέτρα",
-      linkStudiosKicker: "Studios",
+      linkStudiosKicker: "Δωμάτια",
       linkStudiosTitle: "Δείτε τον χαρακτήρα της διαμονής",
       linkStudiosBody:
         "Περιηγηθείτε στους χώρους, τις παροχές και στις πρακτικές πληροφορίες για μια άνετη επίσκεψη.",
-      linkStudiosCta: "Μετάβαση στα studios",
+      linkStudiosCta: "Μετάβαση στα δωμάτια",
       linkIslandKicker: "Σκόπελος",
       linkIslandTitle: "Γνωρίστε τη βόρεια πλευρά του νησιού",
       linkIslandBody: "Παραλίες, χωριά και μικρές καθημερινές διαδρομές που κάνουν τη Σκόπελο ξεχωριστή.",
@@ -81,10 +113,10 @@ const translations = {
       linkContactCta: "Πηγαίνετε στην επικοινωνία"
     },
     studios: {
-      eyebrow: "Studios & καθημερινή άνεση",
+      eyebrow: "Δωμάτια & καθημερινή άνεση",
       title: "Χώροι που αφήνουν το τοπίο να πρωταγωνιστεί.",
       lead:
-        "Τα studios του Axion Esti δίνουν έμφαση στην καθαρότητα, τη λειτουργικότητα και στη γαλήνη μιας ήσυχης διαμονής στη Σκόπελο.",
+        "Τα δωμάτια και studios του Kalokairi Boutique Residence δίνουν έμφαση στην καθαρότητα, τη λειτουργικότητα και στη γαλήνη μιας ήσυχης διαμονής στη Σκόπελο.",
       heroPhoto: "Studio με μπαλκόνι και θέα",
       cardOneKicker: "Για ζευγάρια ή φίλους",
       cardOneTitle: "Φωτεινή βάση για ήρεμες μέρες στο νησί",
@@ -121,7 +153,7 @@ const translations = {
       eyebrow: "Το νησί γύρω σας",
       title: "Η Σκόπελος κινείται με τον ρυθμό του πεύκου, της θάλασσας και του φωτός.",
       lead:
-        "Από το Axion Esti βρίσκεστε κοντά στη Γλώσσα, το Λουτράκι και σε μερικές από τις πιο χαρακτηριστικές διαδρομές της βόρειας και δυτικής Σκοπέλου.",
+        "Από το Kalokairi Boutique Residence βρίσκεστε κοντά στη Γλώσσα, το Λουτράκι και σε μερικές από τις πιο χαρακτηριστικές διαδρομές της βόρειας και δυτικής Σκοπέλου.",
       photoMain: "Η θέα που αλλάζει με το φως της ημέρας",
       placeOneKicker: "Γλώσσα",
       placeOneTitle: "Το ψηλό χωριό πάνω από το Λουτράκι",
@@ -172,7 +204,7 @@ const translations = {
       title: "Ρωτήστε για διαθεσιμότητα, άφιξη ή οτιδήποτε χρειάζεστε.",
       lead:
         "Η επικοινωνία είναι απλή και ανθρώπινη. Αν σχεδιάζετε το ταξίδι σας στη Σκόπελο, μπορείτε να στείλετε μήνυμα ή να καλέσετε απευθείας.",
-      photoMain: "Η αυλή και η πισίνα του Axion Esti",
+      photoMain: "Η αυλή και η πισίνα του Kalokairi Boutique Residence",
       emailCta: "Στείλτε email",
       callCta: "Καλέστε",
       phoneKicker: "Τηλέφωνο",
@@ -196,26 +228,39 @@ const translations = {
   },
   en: {
     meta: {
-      home: "Axion Esti | Skopelos",
-      studios: "Axion Esti | Studios",
-      skopelos: "Axion Esti | Skopelos",
-      contact: "Axion Esti | Contact"
+      home: "Kalokairi Boutique Residence | Skopelos",
+      studios: "Kalokairi Boutique Residence | Rooms & Studios",
+      skopelos: "Kalokairi Boutique Residence | Skopelos",
+      contact: "Kalokairi Boutique Residence | Contact"
+    },
+    descriptions: {
+      home:
+        "Kalokairi Boutique Residence in Glossa, Skopelos, with Aegean views, a seasonal pool, private parking, and calm access to northern beaches.",
+      studios:
+        "Rooms and studios at Kalokairi Boutique Residence with air conditioning, kitchenette, Wi-Fi, balconies, pool, and private parking.",
+      skopelos:
+        "Explore Glossa, Loutraki, and the northern beaches of Skopelos from Kalokairi Boutique Residence.",
+      contact:
+        "Contact Kalokairi Boutique Residence in Glossa, Skopelos, or check availability on Booking.com."
     },
     common: {
+      brandName: "Kalokairi Boutique Residence",
       brandTag: "Glossa, Skopelos",
       navHome: "Home",
-      navStudios: "Studios",
+      navStudios: "Rooms",
       navIsland: "Skopelos",
       navContact: "Contact",
+      bookingCta: "Check availability",
+      formerName: "Formerly Axion Esti Apartments",
       photoPlaceholder: "Reserved for a future photo",
       footerLine: "Thesi Vlachaki, Glossa, Skopelos",
-      altPoolMain: "The main pool and front facade of Axion Esti",
+      altPoolMain: "The main pool and front facade of Kalokairi Boutique Residence",
       altPoolAerial: "Aerial view of the property and pool",
       altStudioInterior: "Studio interior with kitchenette and sea-view balcony",
       altBalconyView: "Private balcony overlooking the Aegean",
       altPoolTop: "Top view of the pool and deck",
       altSunsetView: "Sunset over the sea from northern Skopelos",
-      altPoolTerrace: "Pool and stone courtyard at Axion Esti",
+      altPoolTerrace: "Pool and stone courtyard at Kalokairi Boutique Residence",
       amenityPool: "Outdoor pool",
       amenitySeaView: "Sea-view balconies",
       amenityKitchen: "Kitchenette",
@@ -229,8 +274,8 @@ const translations = {
       eyebrow: "Family-run hospitality above the Aegean",
       title: "A calm summer base between Glossa and Palaio Klima.",
       lead:
-        "Axion Esti is a warm, light-filled stay in Skopelos with sea views, a pool, and the easy rhythm that makes holidays feel uncomplicated.",
-      primaryCta: "Explore the studios",
+        "Kalokairi Boutique Residence is a warm, light-filled stay in Skopelos with sea views, a pool, and the easy rhythm that makes holidays feel uncomplicated.",
+      primaryCta: "Explore the rooms",
       secondaryCta: "Get in touch",
       featureOne: "Sea views",
       featureTwo: "Pool and sun terrace",
@@ -257,13 +302,13 @@ const translations = {
       escapeKicker: "Landscape and atmosphere",
       escapeTitle: "The stay is shaped by water, light, and the horizon.",
       escapeBody:
-        "With its stone architecture, sculpted pool, and open Aegean views, Axion Esti becomes much more tangible once the real imagery leads the experience.",
+        "With its stone architecture, sculpted pool, and open Aegean views, Kalokairi Boutique Residence becomes much more tangible once the real imagery leads the experience.",
       escapeOne: "Evening light over the open sea",
       escapeTwo: "High above the water, among olives and stone",
-      linkStudiosKicker: "Studios",
+      linkStudiosKicker: "Rooms",
       linkStudiosTitle: "See the character of the stay",
       linkStudiosBody: "Browse the spaces, amenities, and practical notes for a comfortable visit.",
-      linkStudiosCta: "Go to the studios",
+      linkStudiosCta: "Go to rooms",
       linkIslandKicker: "Skopelos",
       linkIslandTitle: "Discover the northern side of the island",
       linkIslandBody: "Beaches, villages, and everyday routes that give Skopelos its character.",
@@ -274,10 +319,10 @@ const translations = {
       linkContactCta: "Go to contact"
     },
     studios: {
-      eyebrow: "Studios and everyday comfort",
+      eyebrow: "Rooms and everyday comfort",
       title: "Spaces that let the landscape lead.",
       lead:
-        "The studios at Axion Esti focus on clarity, functionality, and the calm pace of an easy stay in Skopelos.",
+        "The rooms and studios at Kalokairi Boutique Residence focus on clarity, functionality, and the calm pace of an easy stay in Skopelos.",
       heroPhoto: "Studio with balcony and sea view",
       cardOneKicker: "For couples or friends",
       cardOneTitle: "A bright base for quiet island days",
@@ -314,7 +359,7 @@ const translations = {
       eyebrow: "The island around you",
       title: "Skopelos moves to the rhythm of pine, sea, and light.",
       lead:
-        "From Axion Esti, you are close to Glossa, Loutraki, and some of the island's most characteristic routes across northern and western Skopelos.",
+        "From Kalokairi Boutique Residence, you are close to Glossa, Loutraki, and some of the island's most characteristic routes across northern and western Skopelos.",
       photoMain: "A view that shifts with the light",
       placeOneKicker: "Glossa",
       placeOneTitle: "The high village above Loutraki",
@@ -365,7 +410,7 @@ const translations = {
       title: "Ask about availability, arrival details, or anything else you need.",
       lead:
         "Communication is simple and personal. If you are planning your trip to Skopelos, you can send a message or call directly.",
-      photoMain: "The courtyard and pool at Axion Esti",
+      photoMain: "The courtyard and pool at Kalokairi Boutique Residence",
       emailCta: "Send an email",
       callCta: "Call us",
       phoneKicker: "Telephone",
@@ -389,26 +434,39 @@ const translations = {
   },
   de: {
     meta: {
-      home: "Axion Esti | Skopelos",
-      studios: "Axion Esti | Studios",
-      skopelos: "Axion Esti | Skopelos",
-      contact: "Axion Esti | Kontakt"
+      home: "Kalokairi Boutique Residence | Skopelos",
+      studios: "Kalokairi Boutique Residence | Zimmer & Studios",
+      skopelos: "Kalokairi Boutique Residence | Skopelos",
+      contact: "Kalokairi Boutique Residence | Kontakt"
+    },
+    descriptions: {
+      home:
+        "Kalokairi Boutique Residence in Glossa auf Skopelos mit Blick auf die Ägäis, saisonalem Pool, Privatparkplatz und ruhiger Lage.",
+      studios:
+        "Zimmer und Studios im Kalokairi Boutique Residence mit Klimaanlage, Kochnische, WLAN, Balkonen, Pool und Privatparkplatz.",
+      skopelos:
+        "Entdecken Sie Glossa, Loutraki und die nördlichen Strände von Skopelos vom Kalokairi Boutique Residence aus.",
+      contact:
+        "Kontaktieren Sie Kalokairi Boutique Residence in Glossa, Skopelos, oder prüfen Sie die Verfügbarkeit auf Booking.com."
     },
     common: {
+      brandName: "Kalokairi Boutique Residence",
       brandTag: "Glossa, Skopelos",
       navHome: "Start",
-      navStudios: "Studios",
+      navStudios: "Zimmer",
       navIsland: "Skopelos",
       navContact: "Kontakt",
+      bookingCta: "Verfügbarkeit prüfen",
+      formerName: "Ehemals Axion Esti Apartments",
       photoPlaceholder: "Platzhalter fur ein zukunftiges Foto",
       footerLine: "Thesi Vlachaki, Glossa, Skopelos",
-      altPoolMain: "Der Hauptpool und die Front des Axion Esti",
+      altPoolMain: "Der Hauptpool und die Front des Kalokairi Boutique Residence",
       altPoolAerial: "Luftaufnahme der Unterkunft und des Pools",
       altStudioInterior: "Studio-Innenraum mit Kochnische und Balkon mit Meerblick",
       altBalconyView: "Privater Balkon mit Blick auf die Agais",
       altPoolTop: "Blick von oben auf Pool und Deck",
       altSunsetView: "Sonnenuntergang uber dem Meer im Norden von Skopelos",
-      altPoolTerrace: "Pool und steinerner Innenhof des Axion Esti",
+      altPoolTerrace: "Pool und steinerner Innenhof des Kalokairi Boutique Residence",
       amenityPool: "Außenpool",
       amenitySeaView: "Balkone mit Meerblick",
       amenityKitchen: "Kochnische",
@@ -422,8 +480,8 @@ const translations = {
       eyebrow: "Familiere Gastfreundschaft uber der Agais",
       title: "Ein ruhiger Sommeraufenthalt zwischen Glossa und Palaio Klima.",
       lead:
-        "Axion Esti ist ein warmer, lichtvoller Aufenthalt auf Skopelos mit Meerblick, Pool und dem entspannten Rhythmus, der Urlaub einfach wirken lasst.",
-      primaryCta: "Studios ansehen",
+        "Kalokairi Boutique Residence ist ein warmer, lichtvoller Aufenthalt auf Skopelos mit Meerblick, Pool und dem entspannten Rhythmus, der Urlaub einfach wirken lasst.",
+      primaryCta: "Zimmer ansehen",
       secondaryCta: "Kontakt aufnehmen",
       featureOne: "Meerblick",
       featureTwo: "Pool und Sonnenterrasse",
@@ -450,13 +508,13 @@ const translations = {
       escapeKicker: "Landschaft und Stimmung",
       escapeTitle: "Der Aufenthalt wird von Wasser, Licht und Horizont gepragt.",
       escapeBody:
-        "Mit seiner Steinarchitektur, dem markanten Pool und dem offenen Blick auf die Agais gewinnt das Axion Esti deutlich an Charakter, sobald echte Bilder die Erfahrung tragen.",
+        "Mit seiner Steinarchitektur, dem markanten Pool und dem offenen Blick auf die Agais gewinnt das Kalokairi Boutique Residence deutlich an Charakter, sobald echte Bilder die Erfahrung tragen.",
       escapeOne: "Abendlicht uber dem offenen Meer",
       escapeTwo: "Hoch uber dem Wasser, zwischen Olivenbaumen und Stein",
-      linkStudiosKicker: "Studios",
+      linkStudiosKicker: "Zimmer",
       linkStudiosTitle: "Den Charakter des Aufenthalts entdecken",
       linkStudiosBody: "Sehen Sie sich die Raume, Annehmlichkeiten und praktischen Hinweise fur einen angenehmen Besuch an.",
-      linkStudiosCta: "Zu den Studios",
+      linkStudiosCta: "Zu den Zimmern",
       linkIslandKicker: "Skopelos",
       linkIslandTitle: "Die nordliche Seite der Insel entdecken",
       linkIslandBody: "Strande, Dorfer und kleine Wege, die Skopelos seinen Charakter geben.",
@@ -467,10 +525,10 @@ const translations = {
       linkContactCta: "Zum Kontakt"
     },
     studios: {
-      eyebrow: "Studios und alltaglicher Komfort",
+      eyebrow: "Zimmer und alltaglicher Komfort",
       title: "Raume, die der Landschaft den Vorrang lassen.",
       lead:
-        "Die Studios im Axion Esti setzen auf Klarheit, Funktionalitat und die ruhige Stimmung eines unkomplizierten Aufenthalts auf Skopelos.",
+        "Die Zimmer und Studios im Kalokairi Boutique Residence setzen auf Klarheit, Funktionalitat und die ruhige Stimmung eines unkomplizierten Aufenthalts auf Skopelos.",
       heroPhoto: "Studio mit Balkon und Meerblick",
       cardOneKicker: "Fur Paare oder Freunde",
       cardOneTitle: "Eine helle Basis fur ruhige Inseltage",
@@ -507,7 +565,7 @@ const translations = {
       eyebrow: "Die Insel um Sie herum",
       title: "Skopelos bewegt sich im Rhythmus von Pinien, Meer und Licht.",
       lead:
-        "Vom Axion Esti aus sind Glossa, Loutraki und einige der charakteristischsten Wege im Norden und Westen von Skopelos leicht erreichbar.",
+        "Vom Kalokairi Boutique Residence aus sind Glossa, Loutraki und einige der charakteristischsten Wege im Norden und Westen von Skopelos leicht erreichbar.",
       photoMain: "Ein Blick, der sich mit dem Licht verandert",
       placeOneKicker: "Glossa",
       placeOneTitle: "Das hoch gelegene Dorf uber Loutraki",
@@ -558,7 +616,7 @@ const translations = {
       title: "Fragen Sie nach Verfugbarkeit, Anreise oder allem, was Sie brauchen.",
       lead:
         "Die Kommunikation ist einfach und personlich. Wenn Sie Ihre Reise nach Skopelos planen, konnen Sie direkt schreiben oder anrufen.",
-      photoMain: "Innenhof und Pool des Axion Esti",
+      photoMain: "Innenhof und Pool des Kalokairi Boutique Residence",
       emailCta: "E-Mail senden",
       callCta: "Anrufen",
       phoneKicker: "Telefon",
@@ -586,12 +644,105 @@ function getByPath(object, path) {
   return path.split(".").reduce((value, segment) => (value ? value[segment] : undefined), object);
 }
 
-function applyLanguage(language) {
-  const dictionary = translations[language] || translations.el;
-  const page = document.body.dataset.page;
+function pageUrl(page) {
+  return new URL(PAGE_PATHS[page] || "", SITE_URL).href;
+}
 
-  document.documentElement.lang = language;
-  document.title = dictionary.meta[page] || "Axion Esti";
+function pageImage(page) {
+  return new URL(PAGE_IMAGES[page] || PAGE_IMAGES.home, SITE_URL).href;
+}
+
+function updateNamedMeta(name, content) {
+  if (!content) {
+    return;
+  }
+
+  let element = document.querySelector(`meta[name="${name}"]`);
+  if (!element) {
+    element = document.createElement("meta");
+    element.setAttribute("name", name);
+    document.head.appendChild(element);
+  }
+
+  element.setAttribute("content", content);
+}
+
+function updatePropertyMeta(property, content) {
+  if (!content) {
+    return;
+  }
+
+  let element = document.querySelector(`meta[property="${property}"]`);
+  if (!element) {
+    element = document.createElement("meta");
+    element.setAttribute("property", property);
+    document.head.appendChild(element);
+  }
+
+  element.setAttribute("content", content);
+}
+
+function updateStructuredData(language, dictionary, page) {
+  const bookingUrl = BOOKING_URLS[language] || BOOKING_URLS.el;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    name: dictionary.common.brandName,
+    alternateName: "Axion Esti Apartments",
+    description: dictionary.descriptions[page],
+    url: SITE_URL,
+    sameAs: [bookingUrl],
+    image: pageImage(page),
+    telephone: "+302424033144",
+    email: "axionestiholiday@gmail.com",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Thesi Vlachaki",
+      addressLocality: "Glossa",
+      addressRegion: "Skopelos",
+      postalCode: "37003",
+      addressCountry: "GR"
+    },
+    amenityFeature: [
+      { "@type": "LocationFeatureSpecification", name: dictionary.common.amenityPool, value: true },
+      { "@type": "LocationFeatureSpecification", name: dictionary.common.amenityWifi, value: true },
+      { "@type": "LocationFeatureSpecification", name: dictionary.common.amenityParking, value: true },
+      { "@type": "LocationFeatureSpecification", name: dictionary.common.amenityAircon, value: true }
+    ]
+  };
+
+  let element = document.getElementById("lodging-structured-data");
+  if (!element) {
+    element = document.createElement("script");
+    element.type = "application/ld+json";
+    element.id = "lodging-structured-data";
+    document.head.appendChild(element);
+  }
+
+  element.textContent = JSON.stringify(structuredData);
+}
+
+function applyLanguage(language) {
+  const activeLanguage = translations[language] ? language : "el";
+  const dictionary = translations[activeLanguage];
+  const page = document.body.dataset.page;
+  const pageTitle = dictionary.meta[page] || "Kalokairi Boutique Residence";
+  const pageDescription = dictionary.descriptions[page] || dictionary.descriptions.home;
+  const canonicalUrl = pageUrl(page);
+  const imageUrl = pageImage(page);
+  const bookingUrl = BOOKING_URLS[activeLanguage] || BOOKING_URLS.el;
+
+  document.documentElement.lang = activeLanguage;
+  document.title = pageTitle;
+  updateNamedMeta("description", pageDescription);
+  updatePropertyMeta("og:title", pageTitle);
+  updatePropertyMeta("og:description", pageDescription);
+  updatePropertyMeta("og:url", canonicalUrl);
+  updatePropertyMeta("og:image", imageUrl);
+  updateNamedMeta("twitter:title", pageTitle);
+  updateNamedMeta("twitter:description", pageDescription);
+  updateNamedMeta("twitter:image", imageUrl);
+  updateStructuredData(activeLanguage, dictionary, page);
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.dataset.i18n;
@@ -610,17 +761,22 @@ function applyLanguage(language) {
   });
 
   document.querySelectorAll(".lang-btn").forEach((button) => {
-    button.classList.toggle("active", button.dataset.lang === language);
+    button.classList.toggle("active", button.dataset.lang === activeLanguage);
+    button.setAttribute("aria-pressed", String(button.dataset.lang === activeLanguage));
+  });
+
+  document.querySelectorAll("[data-booking-link]").forEach((element) => {
+    element.setAttribute("href", bookingUrl);
   });
 }
 
-const initialLanguage = localStorage.getItem("axion-esti-lang") || "el";
+const initialLanguage = localStorage.getItem("kalokairi-lang") || "el";
 applyLanguage(initialLanguage);
 
 document.querySelectorAll(".lang-btn").forEach((button) => {
   button.addEventListener("click", () => {
     const { lang } = button.dataset;
-    localStorage.setItem("axion-esti-lang", lang);
+    localStorage.setItem("kalokairi-lang", lang);
     applyLanguage(lang);
   });
 });
